@@ -1,0 +1,15 @@
+@use 'Fonts' as *;
+@use 'Navbar';
+@use 'Dropdown';
+@use 'MainPage';
+@use 'AccountPageInput';
+@use 'Login';
+
+* {
+  padding: 0 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 0;
+}

@@ -1,0 +1,103 @@
+@use 'Fonts' as *;
+$background-color: white;
+$font-family: $font-inriasans;
+$text-color: black;
+
+.navbar {
+    background-color: $background-color;
+    color: $text-color;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 50% 30%;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    font-family: $font-family;
+
+    &__logo {
+        height: calc(40 / 1440 * 100vw);
+    }
+
+    &__site-title {
+        display: flex;
+        font-size: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        margin-left: 1rem;
+        padding-right: calc(24 / 1440 * 100vw);
+        align-items: center;
+    }
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        border: none;
+        background-color: $text-color;
+        border-radius: (12/ 1440 * 100vw);
+        width: 40vw;
+        padding: calc(5 / 1440 * 100vw) 0px;
+        margin: 0;
+
+        &:has(.navbar__search-input:focus) {
+            border: 2px solid #52c2f2;
+        }
+
+    }
+
+    &__search-input {
+        background-color: $text-color;
+        border: none;
+        outline: none;
+        width: 90%;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        padding-left: calc(5 / 1440 * 100vw);
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        text-decoration: none;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    &__link-group {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 1.3em;
+    }
+
+    &__login-signup {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        gap: 10%;
+
+        .signup {
+            font-size: 1.3em;
+            background-color: #352D24;
+            text-decoration: none;
+            color: white;
+            border: none;   
+            padding: calc(10 / 1440 * 100vw) calc(28 / 1440 * 100vw); 
+            border-radius: calc(50 / 1440 * 100vw);
+        }
+
+        .login{
+            font-size: 1.3em;
+            text-decoration: none;
+            color: $text-color;
+        }
+    }
+}
