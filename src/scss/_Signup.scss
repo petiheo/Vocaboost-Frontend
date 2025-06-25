@@ -1,6 +1,7 @@
 @use 'Fonts' as *;
 $text-color: #352D24;
 
+
 .grid-container{
     display: grid;
     grid-template-columns: 60% 40%;
@@ -11,12 +12,13 @@ $text-color: #352D24;
         grid-column-end: 3;
     }
 }
-.login{
+.signup{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #F5F5F5;
+
 
     &-logo{
         position: relative;
@@ -26,7 +28,7 @@ $text-color: #352D24;
         height: calc((65 / 1440) * 100vh);
     }
 
-    &-login-button{
+    &-signup-button{
         text-decoration: none;
         color: $text-color;
         font-family: $font-lalezar;
@@ -67,19 +69,14 @@ $text-color: #352D24;
 
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 30px;
     }
 
     &-signup-container{
         display: flex;
         justify-content: center;
         gap: 50%; 
-    }
 
-    &-or{
-        color: $text-color;
-        font-family: $font-lalezar;
-        font-size: 30px;
     }
 
     &-form {
@@ -88,16 +85,10 @@ $text-color: #352D24;
         gap: 20px; 
     }
 
-
-    &-forgot-password{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        text-decoration: none;
+    &-or{
         color: $text-color;
         font-family: $font-lalezar;
-        font-size: calc((15 / 1440) * 100vw);
+        font-size: 30px;
     }
 
     &-back-button-container{
@@ -106,7 +97,7 @@ $text-color: #352D24;
         align-items: center;
         width: 100%;
 
-        .login-back-button{
+        .signup-back-button{
             display: flex;
             justify-content: center;
 
@@ -119,6 +110,8 @@ $text-color: #352D24;
             border: none;
             border-radius: 17px;
             padding: 10px;
+
+            margin-top: 1rem;         
 
         }
     }

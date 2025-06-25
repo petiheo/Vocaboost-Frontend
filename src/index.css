@@ -316,7 +316,7 @@
   width: 60%;
 }
 
-.page02 .group41 {
+.page02 .group1 {
   position: absolute;
   top: 900px;
   width: 100vw;
@@ -347,6 +347,21 @@
   color: #352D24;
   font-weight: bold;
   font-size: 30px;
+}
+.page02 .group2 {
+  position: absolute;
+  top: 1300px;
+  left: 650px;
+}
+.page02 .group3 {
+  position: absolute;
+  top: 1300px;
+  left: 100px;
+}
+.page02 .group4 {
+  position: absolute;
+  top: 1500px;
+  left: 400px;
 }
 
 .input {
@@ -449,6 +464,11 @@
   font-family: "Lalezar", sans-serif;
   font-size: 30px;
 }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .login-forgot-password {
   display: flex;
   flex-direction: column;
@@ -475,6 +495,101 @@
   border: none;
   border-radius: 17px;
   padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 100vh;
+}
+.grid-container .right-grid {
+  background-color: #352D24;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F5;
+}
+.signup-logo {
+  position: relative;
+  left: 18.0555555556vw;
+  top: 5.3472222222vh;
+  width: 10.4861111111vw;
+  height: 4.5138888889vh;
+}
+.signup-signup-button {
+  text-decoration: none;
+  color: #352D24;
+  font-family: "Lalezar", sans-serif;
+  font-size: 2.0833333333vw;
+}
+.signup-signup-button {
+  text-decoration: none;
+  color: #352D24;
+  font-family: "Lalezar", sans-serif;
+  font-size: 2.0833333333vw;
+}
+.signup-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  text-decoration: none;
+  color: #352D24;
+  font-family: "Lalezar", sans-serif;
+  border: 2px solid #A0A0A0;
+  border-radius: 40px;
+  padding: 10px;
+  margin: 5% 0;
+}
+.signup-container {
+  position: relative;
+  left: 4.5833333333vw;
+  top: 12.0833333333vh;
+  width: 38.6111111111vw;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.signup-signup-container {
+  display: flex;
+  justify-content: center;
+  gap: 50%;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.signup-or {
+  color: #352D24;
+  font-family: "Lalezar", sans-serif;
+  font-size: 30px;
+}
+.signup-back-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.signup-back-button-container .signup-back-button {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  text-decoration: none;
+  color: #352D24;
+  font-family: "Inria Sans", sans-serif;
+  background-color: #F3EDDF;
+  border: none;
+  border-radius: 17px;
+  padding: 10px;
+  margin-top: 1rem;
 }
 
 * {

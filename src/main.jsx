@@ -6,10 +6,11 @@ import CreateList from "./pages/CreateList";
 import HomePage from "./pages/HomePage";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainPage/>,
     children: [
       {
         path: "homepage",
@@ -25,12 +26,14 @@ const router = createBrowserRouter([
       },
     ]
   },
-
   {
     path: "login",
-    element: <Login />
+    element: <Login />,
   },
-
+  {
+    path: "signup",
+    element: <SignUp />
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

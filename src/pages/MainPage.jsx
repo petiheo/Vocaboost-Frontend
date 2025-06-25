@@ -1,6 +1,9 @@
+import NavBar from '../components/Navbar'
 import "../assets/icons/index";
-import { Link } from "react-router-dom";
-import { Pattern1, Pattern2, Pattern3, Pattern4, Pattern5, Pattern6, Pattern7, Pattern8, PatternCard1, PatternCard2, PatternCard3, Group41 } from "../assets/icons/index";
+import { Link, Outlet } from "react-router-dom";
+import { Pattern1, Pattern2, Pattern3, Pattern4, Pattern5, Pattern6, Pattern7, Pattern8 } from "../assets/icons/index";
+import { PatternCard1, PatternCard2, PatternCard3 } from "../assets/icons/index";
+import { Group41, Group52, Group53, Group56 } from "../assets/icons/index";
 
 const patterns = {
     1: Pattern1,
@@ -17,9 +20,20 @@ const patternsCard = {
     2: PatternCard2,
     3: PatternCard3,
 }
+
+const Group = {
+    1: Group41,
+    2: Group52,
+    3: Group53,
+    4: Group56
+
+}
+
 export default function MainPage() {
     return (
         <div className="main-page">
+            <NavBar/>
+            <Outlet/>
             <div className="page01">
                 <div className="top-pattern">
 
@@ -54,10 +68,18 @@ export default function MainPage() {
                 </div>
             </div>
             <div className="page02">
-                <img src={Group41} alt="group41" className="group41" />
                 <div className="main-context">" Struggling with English vocabulary "</div>
                 <div className="space">---</div>
                 <div className="extra-context">Don't worry</div>
+
+                <div className="group-page02">
+                            {[1, 2, 3, 4].map((num) => (
+                                <img src={Group[num]} alt={`group${num}`} className={`group${num}`} />
+                            ))}
+                        </div>
+                <div className="footer-context">
+
+                </div>
             </div>
         </div>
     );

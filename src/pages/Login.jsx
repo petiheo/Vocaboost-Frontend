@@ -16,7 +16,7 @@ export default function Login() {
 
                     <div className="login-signup-container">
                         <Link to="" className="login-login-button">Sign in</Link>
-                        <Link to="signup" className="login-signup-button">Sign up</Link>
+                        <Link to="/signup" className="login-signup-button">Sign up</Link>
                     </div>
 
                     <Link to="" className="login-google">

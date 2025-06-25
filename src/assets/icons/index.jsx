@@ -14,6 +14,11 @@ import PatternCard2 from "../icons/MainPage/Pattern card 2.svg"
 import PatternCard3 from "../icons/MainPage/Pattern card 3.svg"
 import GoogleLogo from "../icons/Login/google.svg"
 import Group41 from "..//icons/MainPage/Group 41.svg"
+import Group52 from "..//icons/MainPage/Group 52.svg"
+import Group53 from "..//icons/MainPage/Group 53.svg"
+import Group56 from "..//icons/MainPage/Group 56.svg"
+
+
 
 
 
@@ -22,17 +27,9 @@ export {
     Search,
     Trophy,
     DropdownArrow,
-    Pattern1,
-    Pattern2, 
-    Pattern3, 
-    Pattern4, 
-    Pattern5, 
-    Pattern6, 
-    Pattern7, 
-    Pattern8,
-    PatternCard1,
-    PatternCard2, 
-    PatternCard3,
-    Group41,
+    Pattern1, Pattern2, Pattern3, Pattern4, Pattern5, Pattern6, Pattern7, Pattern8,
+    PatternCard1, PatternCard2, PatternCard3,
+    Group41, Group52, Group53, Group56,
+    // Login page
     GoogleLogo,
 }
