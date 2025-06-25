@@ -1,10 +1,26 @@
 import "../assets/icons/index";
-import { Link } from "react-router-dom";
-import AccountPageInput from "../components/AccountPageInput"
-import MainPageLogo from "../assets/Logo.svg"
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import AccountPageInput from "../components/AccountPageInput";
+import MainPageLogo from "../assets/Logo.svg";
 import { GoogleLogo } from "../assets/icons/index";
+import { login, googleLogin } from "../services/authService";
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await login(email, password);
+            navigate("/homepage");
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     return (
         <div className="grid-container">
             <div className="left-grid">
@@ -19,19 +35,19 @@ export default function Login() {
                         <Link to="/signup" className="login-signup-button">Sign up</Link>
                     </div>
 
-                    <Link to="" className="login-google">
+                    <button type="button" className="login-google" onClick={googleLogin}>
                         <img src={GoogleLogo} alt="google-logo" />
                         Sign in with Google account
-                    </Link>
+                    </button>
 
 
-                    <form className="login-form">
+                    <form className="login-form" onSubmit={handleSubmit}>
                         <AccountPageInput
-                            label="Email:" name="username" type="text" placeholder="" required
+                            label="Email:" name="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} required
                         />
 
                         <AccountPageInput
-                            label="Password:" name="password" type="password" placeholder="" required
+                            label="Password:" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
                         />
 
                         <div className="login-forgot-password">
