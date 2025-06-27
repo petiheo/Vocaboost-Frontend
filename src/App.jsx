@@ -1,13 +1,29 @@
-import { useState } from 'react'
-import {Outlet} from 'react-router-dom'
+import { useEffect } from 'react'
+import { supabase } from './supabaseClient'
+import { Outlet, useNavigate } from 'react-router-dom'
 import NavBar from './components/Navbar'
-import MainPage from './pages/MainPage'
-function App() {
-  return (
-  <>
-    <NavBar/>
-    <Outlet/>
-  </>
-)}
 
-export default App;
+function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        console.log('✅ Logged in user:', user)
+        // Nếu muốn redirect:
+        navigate('/homepage')
+      }
+    }
+    getUser()
+  }, [])
+
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  )
+}
+
+export default App

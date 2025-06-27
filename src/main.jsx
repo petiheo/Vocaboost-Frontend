@@ -7,6 +7,10 @@ import HomePage from "./pages/HomePage";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ResetPassword from './pages/ResetPassword'; // reset password page
+import ForgotPassword from './pages/ForgotPassword'; // forgot password page
+import "./scss/main.scss";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +37,14 @@ const router = createBrowserRouter([
   {
     path: "signup",
     element: <SignUp />
+  },  
+  {
+    path: "reset-password",
+    element: <ResetPassword />,
+  },
+  {
+  path: "forgot-password",
+  element: <ForgotPassword />,
   }
 ]);
 

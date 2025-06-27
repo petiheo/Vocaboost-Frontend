@@ -5,6 +5,8 @@
 @use 'AccountPageInput';
 @use 'Login';
 @use 'Signup';
+@use 'ForgotPassword';
+@use 'ResetPassword';
 
 * {
   padding: 0 0;

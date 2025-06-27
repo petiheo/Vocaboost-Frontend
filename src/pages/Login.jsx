@@ -4,7 +4,41 @@ import AccountPageInput from "../components/AccountPageInput"
 import MainPageLogo from "../assets/Logo.svg"
 import { GoogleLogo } from "../assets/icons/index";
 
+import { supabase } from '../supabaseClient'
+import { useNavigate } from 'react-router-dom' // Import useNavigate for navigation
+
+const handleGoogleLogin = async () => {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+  });
+  if (error) console.error(error);
+};
+
 export default function Login() {
+    
+    const navigate = useNavigate()
+
+    const handleLogin = async (e) => {
+    e.preventDefault()
+
+    const email = e.target.email.value
+    const password = e.target.password.value
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+    })
+
+    if (error) {
+        alert("Sai email hoặc mật khẩu!")
+        console.error(error)
+    } else {
+        alert("Đăng nhập thành công!")
+        console.log(data)
+        navigate("/homepage")
+    }
+    }
+
     return (
         <div className="grid-container">
             <div className="left-grid">
@@ -19,23 +53,23 @@ export default function Login() {
                         <Link to="/signup" className="login-signup-button">Sign up</Link>
                     </div>
 
-                    <Link to="" className="login-google">
+                    <Link onClick={handleGoogleLogin} className="login-google">
                         <img src={GoogleLogo} alt="google-logo" />
                         Sign in with Google account
                     </Link>
 
 
-                    <form className="login-form">
+                    <form className="login-form" onSubmit={handleLogin}>
                         <AccountPageInput
-                            label="Email:" name="username" type="text" placeholder="" required
+                            label="Email:" name="email" type="text" placeholder="Enter your email" required
                         />
 
                         <AccountPageInput
-                            label="Password:" name="password" type="password" placeholder="" required
+                            label="Password:" name="password" type="password" placeholder="Enter password" required
                         />
 
                         <div className="login-forgot-password">
-                            <Link to="">Forgot password?</Link>
+                            <Link to="/forgot-password">Forgot password?</Link>
                         </div>
 
                         <AccountPageInput type="submit" value="Sign in" />
