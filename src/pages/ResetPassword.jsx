@@ -5,11 +5,11 @@ import { GoogleLogo } from "../assets/icons/index";
 export default function ResetPassword() {
   const [password, setPassword] = useState("");
 
-  // ✨ Restore session from URL token (very important!)
+  // Restore session from URL token (very important!)
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === "PASSWORD_RECOVERY") {
-        console.log("✅ Session restored from recovery link");
+        console.log(" Session restored from recovery link");
       }
     });
 
