@@ -2,12 +2,12 @@ import api from "../lib/api";
 
 const authService = {
   register: async (data) => {
-    const res = await api.post("/register", data);
+    const res = await api.post("/auth/register", data); //  FIX
     return res.data;
   },
 
   login: async (email, password) => {
-    const res = await api.post("/login", { email, password });
+    const res = await api.post("/auth/login", { email, password }); //  FIX
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
     return res.data;
@@ -25,7 +25,7 @@ const authService = {
   },
 
   forgotPassword: async (email) => {
-    return await api.post("/forgot-password", { email });
+    return await api.post("/auth/forgot-password", { email }); //  FIX
   },
 
   resetPassword: async (newPassword) => {
