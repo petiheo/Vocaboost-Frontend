@@ -18,6 +18,15 @@ import Group52 from "..//icons/MainPage/Group 52.svg"
 import Group53 from "..//icons/MainPage/Group 53.svg"
 import Group56 from "..//icons/MainPage/Group 56.svg"
 
+import Home from "../icons/SideBar/Home.svg"
+import Learning from "../icons/SideBar/Learning.svg"
+import History from "../icons/SideBar/History.svg"
+import Analysis from "../icons/SideBar/Analysis.svg"
+import Setting from "../icons/SideBar/Setting.svg"
+import LogOut from "../icons/SideBar/LogOut.svg"
+import ArrowRight from "../icons/SideBar/ArrowRight.svg"
+import ArrowLeft from "../icons/SideBar/ArrowLeft.svg"
+
 
 
 
@@ -32,4 +41,7 @@ export {
     Group41, Group52, Group53, Group56,
     // Login page
     GoogleLogo,
+
+    // SideBar
+    Home, Learning, History, Analysis, Setting, LogOut, ArrowRight, ArrowLeft
 }
